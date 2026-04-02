@@ -22,19 +22,28 @@ export default function OrivatechLogoMini({ className = "w-32 h-auto" }: { class
 
       {/* Centralizado no novo viewBox de 160x160 */}
       <g transform="translate(80, 80)">
-        <circle cx="0" cy="0" r="55" fill="#080614" stroke="url(#softGrad)" strokeWidth="2" filter="url(#softGlow)"/>
+        <circle cx="0" cy="0" r="60" fill="#080614" stroke="url(#softGrad)" strokeWidth="2" filter="url(#softGlow)"/>
         
         <motion.circle 
-          cx="0" cy="0" r="55" 
+          cx="0" cy="0" r="60" 
           fill="url(#softGrad)" 
           opacity="0.1" 
           animate={{ scale: [1, 1.25, 1], opacity: [0.1, 0.3, 0.1] }} 
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} 
         />
         
-        <text x="0" y="4" textAnchor="middle" fontSize="13" fontWeight="800" fill="white" letterSpacing="2">
-          ORIVATECH
-        </text>
+        <text 
+  x="0" 
+  y="5" 
+  textAnchor="middle" 
+  fontSize="15" 
+  fontWeight="900" 
+  fill="white" 
+  letterSpacing="1"
+  style={{ fontFamily: "'Orbitron', sans-serif" }}
+>
+  ORIVATECH
+</text>
       </g>
     </svg>
   );
