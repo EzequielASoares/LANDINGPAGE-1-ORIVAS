@@ -264,7 +264,6 @@ const Navbar = () => {
     { label: 'Serviços', id: 'servicos' },
     { label: 'Metodologia', id: 'metodologia' },
     { label: 'Diferenciais', id: 'diferenciais' },
-    { label: 'Cases', id: 'cases' }
   ];
 
   return (
@@ -295,18 +294,18 @@ const Navbar = () => {
 
           {/* BOTÃO DE CTA NO NAVBAR (JÁ COM O WHATSAPP) */}
           <div className="hidden md:block">
-            <a 
-              href="https://wa.me/558699291399?text=Olá!%20Tenho%20uma%20ideia%20inovadora,%20e%20queria%20saber%20mais%20sobre%20a%20OrivaTech" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="relative inline-flex h-11 items-center justify-center overflow-hidden rounded-full p-[1px] group"
-            >
-              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-              <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-6 py-1 text-sm font-semibold text-white backdrop-blur-3xl gap-2 group-hover:bg-slate-900 transition-colors">
-                Inicie seu Projeto <Sparkles className="w-4 h-4 text-sky-400" />
-              </span>
-            </a>
-          </div>
+  <a 
+    href="https://wa.me/558699291399?text=Olá!%20Tenho%20uma%20ideia%20inovadora,%20e%20queria%20saber%20mais%20sobre%20a%20OrivaTech" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="relative inline-flex h-11 items-center justify-center overflow-hidden rounded-full group"
+  >
+    {/* Removido o span da animação de borda */}
+    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-6 py-1 text-sm font-semibold text-white transition-colors gap-2 group-hover:bg-slate-800">
+      Inicie seu Projeto <Sparkles className="w-4 h-4 text-sky-400" />
+    </span>
+  </a>
+</div>
 
           {/* MENU MOBILE (HAMBÚRGUER) */}
           <div className="md:hidden flex items-center">
@@ -338,49 +337,30 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden min-h-screen flex items-center">
-      <div className="section-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-sky-500/10" />
+    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden min-h-screen flex items-center justify-center">
+      {/* Brilho de fundo centralizado */}
+      <div className="section-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-sky-500/10 w-[600px] h-[600px] opacity-50" />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 w-full">
+        <div className="flex flex-col items-center text-center">
           
-          {/* LADO ESQUERDO: Textos sempre visíveis */}
-          <div className="lg:w-1/2 text-center lg:text-left z-10">
-            <div className="reveal inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8 shadow-lg">
-              <span className="flex h-2 w-2 rounded-full bg-sky-400 animate-pulse"></span>
-              <span className="text-xs font-semibold text-slate-300 tracking-wider uppercase">Pioneiros em IA & Dados</span>
-            </div>
-            
-            <h1 className="reveal delay-100 text-5xl md:text-7xl lg:text-[5rem] leading-[1.1] font-extrabold tracking-tight mb-8">
-              Construindo o futuro com <br className="hidden md:block" />
-              <span className="gradient-text">Inteligência Artificial</span>
-            </h1>
-            
-            <p className="reveal delay-200 mt-6 text-lg md:text-xl lg:text-2xl text-slate-300 max-w-2xl mx-auto lg:mx-0 mb-12 leading-relaxed font-light">
-              A Orivatech transforma ideias complexas em produtos digitais de <strong className="text-white font-semibold">alto impacto</strong>. 
-            </p>
-            
-            <div className="reveal delay-300 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start items-center">
-              <button className="w-full sm:w-auto px-8 py-4 bg-white text-black rounded-xl font-bold hover:bg-slate-100 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:-translate-y-1 group">
-                Descubra Soluções
-              </button>
-              <a 
-  href="https://wa.me/558699291399?text=Olá!%20Tenho%20uma%20ideia%20inovadora,%20e%20queria%20saber%20mais%20sobre%20a%20OrivaTech" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white rounded-xl font-semibold hover:bg-white/5 transition-all duration-300 flex items-center justify-center gap-2"
->
-  <Terminal className="w-5 h-5 text-slate-400" /> Falar com Especialista
-</a>
-            </div>
-          </div>
-
-          {/* LADO DIREITO: A Logo (Sempre no canto dela) */}
-          <div className="lg:w-1/2 flex justify-center lg:justify-end reveal delay-200">
-            <div className="relative w-full max-w-[400px] lg:max-w-[500px]">
-              <div className="absolute inset-0 bg-purple-500/10 blur-[80px] rounded-full" />
-              <OrivatechLogo />
-            </div>
+          {/* TÍTULO CENTRALIZADO */}
+          <h1 className="reveal delay-100 text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] font-extrabold tracking-tight mb-12">
+            Transformamos ideias em
+            <span className="gradient-text"> software inteligente.</span>
+          </h1>
+          
+          {/* BOTÃO ÚNICO CENTRALIZADO */}
+          <div className="reveal delay-300 w-full flex justify-center">
+            <a 
+              href="https://wa.me/558699291399?text=Olá!%20Tenho%20uma%20ideia%20inovadora,%20e%20queria%20saber%20mais%20sobre%20a%20OrivaTech" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-12 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-2xl font-bold hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(56,189,248,0.15)] hover:-translate-y-1 group"
+            >
+              <Terminal className="w-6 h-6 text-sky-400" />
+              <span className="text-lg">Criar meu produto</span>
+            </a>
           </div>
 
         </div>
@@ -458,9 +438,9 @@ const Services = () => {
       <div className="section-glow right-0 top-1/4 bg-purple-500/5" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-20 reveal">
-          <span className="text-sky-400 font-bold tracking-wider uppercase text-sm mb-4 block">Nossa Especialidade</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white">Arquitetura de <span className="gradient-text">Vanguarda</span></h2>
-          <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">Soluções construídas com as stacks mais modernas, garantindo performance brutal.</p>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white">Nossas  <span className="gradient-text">Soluções</span></h2>
+          <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">Soluções construídas com as stacks mais modernas, garantindo performance.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {services.map((svc, idx) => <TiltCard key={idx} {...svc} />)}
@@ -559,7 +539,7 @@ const BentoDifferentiators = () => (
     </div>
   </section>
 );
-
+/*
 const Testimonials = () => {
   const reviews = [
     { name: "Carlos M.", role: "CTO, FintechX", text: "A Orivatech revolucionou nosso motor de risco. A redução de tempo de análise foi de 80%." },
@@ -573,7 +553,7 @@ const Testimonials = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold text-white">Confiado por <span className="text-slate-400">Inovadores</span></h2>
       </div>
       
-      {/* Grid no Desktop, Scroll no Mobile */}
+      
       <div className="flex lg:grid lg:grid-cols-3 overflow-x-auto lg:overflow-visible gap-6 lg:gap-8 pb-16 px-6 lg:px-8 snap-x no-scrollbar reveal delay-100 max-w-7xl mx-auto">
         {reviews.map((r, i) => (
           <div key={i} className="snap-center shrink-0 w-[85vw] sm:w-[380px] lg:w-full bg-[#0a0a0f] border border-white/10 p-8 lg:p-10 rounded-[2rem] hover:border-sky-400/30 transition-colors group">
@@ -582,7 +562,7 @@ const Testimonials = () => {
               {[1,2,3,4,5].map(s => <span key={s} className="text-sky-400 group-hover:scale-110 transition-transform">★</span>)}
             </div>
             
-            {/* CORREÇÃO AQUI: Usando &quot; no lugar das aspas duplas */}
+            
             <p className="text-slate-300 mb-8 text-lg font-light italic">&quot;{r.text}&quot;</p>
             
             <div className="flex items-center gap-4">
@@ -599,14 +579,14 @@ const Testimonials = () => {
     </section>
   );
 };
-
+*/
 const MotivationalCTA = () => (
   <section className="relative py-40 z-10 overflow-hidden text-center">
     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sky-900/10 to-[#020203]"></div>
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-sky-500/15 rounded-[100%] blur-[120px] animate-subtle-pulse" />
     <div className="relative z-10 max-w-5xl mx-auto px-6 reveal">
       <Server className="w-16 h-16 text-white/50 mx-auto mb-8" strokeWidth={1} />
-      <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-8 tracking-tight">Sua grande ideia merece a <br className="hidden md:block"/><span className="gradient-text">melhor tecnologia.</span></h2>
+      <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-8 tracking-tight">Pronto para transformar seu negócio com  <br className="hidden md:block"/><span className="gradient-text">inteligencia artificial ?</span></h2>
       <a 
   href="https://wa.me/558699291399?text=Olá!%20Tenho%20uma%20ideia%20inovadora,%20e%20queria%20saber%20mais%20sobre%20a%20OrivaTech" 
   target="_blank" 
@@ -615,7 +595,7 @@ const MotivationalCTA = () => (
 >
   <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#38bdf8_0%,#a855f7_50%,#38bdf8_100%)]" />
   <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-10 md:px-14 py-2 text-lg md:text-xl font-bold text-white backdrop-blur-3xl gap-3 group-hover:bg-transparent transition-colors">
-    Começar Agora <Zap className="w-6 h-6 text-yellow-300" />
+    Entrar em contato <Zap className="w-6 h-6 text-yellow-300" />
   </span>
 </a>
     </div>
@@ -684,7 +664,7 @@ export default function App() {
           <TechStack />
           <Workflow />
           <BentoDifferentiators />
-          <Testimonials />
+          
           <MotivationalCTA />
         </main>
         <Footer />
