@@ -32,19 +32,24 @@ import OrivatechLogoMini from './OrivatechLogoMini'; // Ajuste o caminho se nece
 import OrivatechLogo from './Orivatechlogo'; // Ajuste o caminho se estiver em outra pasta
 // --- STYLES & FONT INJECTION ---
 const globalStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+  /* Importa as duas fontes */
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
 
   :root {
     --bg-color: #050508;
-    --accent-blue: #38bdf8;
-    --accent-purple: #a855f7;
   }
 
   body {
     background-color: var(--bg-color);
     color: #f8fafc;
+    /* Fonte base (limpa) para textos normais */
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
+  }
+
+  /* Força a Orbitron apenas nos títulos e elementos de destaque */
+  h1, h2, h3, h4, .font-extrabold, .font-bold {
+    font-family: 'Orbitron', sans-serif !important;
   }
 
   .glass-nav {
