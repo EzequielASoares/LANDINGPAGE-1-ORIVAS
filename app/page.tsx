@@ -414,15 +414,12 @@ const TiltCard = ({ title, description, icon: Icon, delay }: any) => {
     if (cardRef.current) cardRef.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
   };
   return (
-    <div ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)' }} className={`reveal ${delay} animated-gradient-border p-10 cursor-pointer flex flex-col h-full group bg-[#08080c]/80 backdrop-blur-sm`}>
+    <div ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)' }} className={`reveal ${delay} animated-gradient-border p-10  flex flex-col h-full group bg-[#08080c]/80 backdrop-blur-sm`}>
       <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-8 border border-white/10 group-hover:bg-white/10 transition-colors duration-500">
         <Icon className="w-8 h-8 text-sky-400 group-hover:text-white transition-colors duration-300" />
       </div>
       <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-sky-300 transition-colors duration-300">{title}</h3>
       <p className="text-slate-400 leading-relaxed flex-grow text-base font-light">{description}</p>
-      <div className="mt-8 flex items-center text-sky-400 font-semibold text-sm group">
-        Explorar Solução <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-2" />
-      </div>
     </div>
   );
 };
